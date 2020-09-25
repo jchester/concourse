@@ -59,6 +59,7 @@ var DefaultRoles = map[string]string{
 	atc.ListAllPipelines:              ViewerRole,
 	atc.ListPipelines:                 ViewerRole,
 	atc.GetPipeline:                   ViewerRole,
+	atc.GetPipelineKubernetes:         ViewerRole,
 	atc.DeletePipeline:                MemberRole,
 	atc.OrderPipelines:                MemberRole,
 	atc.PausePipeline:                 OperatorRole,

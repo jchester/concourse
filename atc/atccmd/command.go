@@ -1655,6 +1655,7 @@ func (cmd *RunCommand) constructHTTPHandler(
 
 	webMux := http.NewServeMux()
 	webMux.Handle("/api/v1/", csrfHandler)
+	webMux.Handle("/apis/concourse/v1/", csrfHandler)
 	webMux.Handle("/sky/issuer/", authHandler)
 	webMux.Handle("/sky/", loginHandler)
 	webMux.Handle("/auth/", legacyHandler)

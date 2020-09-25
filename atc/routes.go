@@ -55,20 +55,21 @@ const (
 
 	GetCC = "GetCC"
 
-	ListAllPipelines    = "ListAllPipelines"
-	ListPipelines       = "ListPipelines"
-	GetPipeline         = "GetPipeline"
-	DeletePipeline      = "DeletePipeline"
-	OrderPipelines      = "OrderPipelines"
-	PausePipeline       = "PausePipeline"
-	ArchivePipeline     = "ArchivePipeline"
-	UnpausePipeline     = "UnpausePipeline"
-	ExposePipeline      = "ExposePipeline"
-	HidePipeline        = "HidePipeline"
-	RenamePipeline      = "RenamePipeline"
-	ListPipelineBuilds  = "ListPipelineBuilds"
-	CreatePipelineBuild = "CreatePipelineBuild"
-	PipelineBadge       = "PipelineBadge"
+	ListAllPipelines      = "ListAllPipelines"
+	ListPipelines         = "ListPipelines"
+	GetPipeline           = "GetPipeline"
+	GetPipelineKubernetes = "GetPipelineKubernetes"
+	DeletePipeline        = "DeletePipeline"
+	OrderPipelines        = "OrderPipelines"
+	PausePipeline         = "PausePipeline"
+	ArchivePipeline       = "ArchivePipeline"
+	UnpausePipeline       = "UnpausePipeline"
+	ExposePipeline        = "ExposePipeline"
+	HidePipeline          = "HidePipeline"
+	RenamePipeline        = "RenamePipeline"
+	ListPipelineBuilds    = "ListPipelineBuilds"
+	CreatePipelineBuild   = "CreatePipelineBuild"
+	PipelineBadge         = "PipelineBadge"
 
 	RegisterWorker  = "RegisterWorker"
 	LandWorker      = "LandWorker"
@@ -151,6 +152,9 @@ var Routes = rata.Routes([]rata.Route{
 	{Path: "/api/v1/pipelines/:pipeline_name/jobs/:job_name/badge", Method: "GET", Name: MainJobBadge},
 
 	{Path: "/api/v1/teams/:team_name/pipelines/:pipeline_name/jobs/:job_name/tasks/:step_name/cache", Method: "DELETE", Name: ClearTaskCache},
+
+	{Path: "/apis/concourse/v1/pipelines", Method: "GET", Name: ListAllPipelines},
+	{Path: "/apis/concourse/v1/:team_name/pipelines/:pipeline_name", Method: "GET", Name: GetPipelineKubernetes},
 
 	{Path: "/api/v1/pipelines", Method: "GET", Name: ListAllPipelines},
 	{Path: "/api/v1/teams/:team_name/pipelines", Method: "GET", Name: ListPipelines},

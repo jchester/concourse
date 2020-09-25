@@ -21,3 +21,17 @@ func (s *Server) GetPipeline(pipeline db.Pipeline) http.Handler {
 		}
 	})
 }
+
+func (s *Server) GetPipelineKubernetes(pipeline db.Pipeline) http.Handler {
+	logger := s.logger.Session("get-pipeline-kubernetes")
+
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+
+		err := json.NewEncoder(w).Encode(present.PipelineKubernetes(pipeline))
+		if err != nil {
+			logger.Error("failed-to-encode-pipeline-kubernetes", err)
+			w.WriteHeader(http.StatusInternalServerError)
+		}
+	})
+}

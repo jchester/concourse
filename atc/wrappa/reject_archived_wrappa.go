@@ -57,6 +57,7 @@ func (rw *RejectArchivedWrappa) Wrap(handlers rata.Handlers) rata.Handlers {
 			atc.ListDestroyingContainers,
 			atc.ListDestroyingVolumes,
 			atc.GetPipeline,
+			atc.GetPipelineKubernetes,
 			atc.GetJobBuild,
 			atc.PipelineBadge,
 			atc.JobBadge,

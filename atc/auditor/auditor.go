@@ -92,6 +92,7 @@ func (a *auditor) ValidateAction(action string) bool {
 	case atc.ListAllPipelines,
 		atc.ListPipelines,
 		atc.GetPipeline,
+		atc.GetPipelineKubernetes,
 		atc.DeletePipeline,
 		atc.OrderPipelines,
 		atc.PausePipeline,

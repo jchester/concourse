@@ -64,6 +64,7 @@ func (wrappa *APIAuthWrappa) Wrap(handlers rata.Handlers) rata.Handlers {
 
 		// pipeline is public or authorized
 		case atc.GetPipeline,
+			atc.GetPipelineKubernetes,
 			atc.GetJobBuild,
 			atc.PipelineBadge,
 			atc.JobBadge,
